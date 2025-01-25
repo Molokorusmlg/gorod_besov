@@ -1,0 +1,101 @@
+@use "../../../../global.scss";
+
+.interactive {
+  width: 760px;
+  height: 600px;
+
+  @include global.adaptiv("medium-pc") {
+    width: 550px;
+    height: 450px;
+    margin-top: 30px;
+  }
+
+  @include global.adaptiv(table) {
+    width: 350px;
+    height: 250px;
+  }
+
+  &__map__bg {
+    position: absolute;
+    width: 760px;
+    height: 600px;
+
+    @include global.adaptiv("medium-pc") {
+      width: 550px;
+      height: 450px;
+    }
+
+    @include global.adaptiv(table) {
+      width: 350px;
+      height: 250px;
+    }
+  }
+}
+
+.map__block {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  opacity: 0;
+  display: none;
+  animation: map__close 0.3s ease-in-out;
+
+  @include global.adaptiv("medium-pc") {
+    width: 550px;
+    height: 450px;
+  }
+
+  @include global.adaptiv(table) {
+    width: 350px;
+    height: 250px;
+  }
+
+  &__visible {
+    opacity: 1;
+    display: block;
+    animation: map__open 0.3s ease-in-out;
+  }
+}
+
+.map__iframe {
+  position: relative;
+  border-radius: 7px;
+  border: none;
+  width: 760px;
+  height: 600px;
+
+  @include global.adaptiv(table) {
+    width: 350px;
+    height: 250px;
+  }
+}
+
+@keyframes map__open {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+
+  1% {
+    display: block;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes map__close {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+
+  99% {
+    opacity: 0;
+  }
+
+  100% {
+    display: none;
+  }
+}

@@ -1,0 +1,24 @@
+@use "../../global.scss";
+
+.create {
+  @include global.flex(row, center, center);
+  height: 100vh;
+  background-color: #313131;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.171) 2px,
+    transparent 0
+  );
+  background-size: 30px 30px;
+  background-position: -5px -5px;
+
+  animation: move 4s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -60px;
+  }
+}

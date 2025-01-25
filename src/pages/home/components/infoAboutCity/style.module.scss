@@ -1,0 +1,53 @@
+@use "../../../../global.scss";
+
+.info__container {
+  width: 100%;
+  padding: 30px 100px 30px 100px;
+  overflow: hidden;
+
+  @include global.adaptiv(table) {
+    padding: 30px 10px 30px 10px;
+  }
+
+  &:hover .info__title__line {
+    opacity: 1;
+  }
+}
+
+.info__wrapper {
+  @include global.flex(row, center, center);
+  width: 100%;
+}
+
+.info__title {
+  font-size: 40px;
+
+  @include global.adaptiv(table) {
+    font-size: 20px;
+  }
+
+  &__line {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #646cff;
+    opacity: 0.3;
+    transition: 0.3s ease-in-out;
+
+    @include global.adaptiv(table) {
+      width: 50%;
+      margin-top: 10px;
+    }
+  }
+
+  &__block {
+    @include global.flex(column, center, center);
+    width: 400px;
+    margin-bottom: 30px;
+  }
+}
+
+.info__blocks {
+  @include global.flex(column, none, none);
+  gap: 50px;
+}

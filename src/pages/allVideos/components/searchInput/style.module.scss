@@ -1,0 +1,57 @@
+@use "../../../../global.scss";
+
+.all__video__search {
+  @include global.flex(row, center, center);
+  width: 100%;
+  padding: 10px;
+
+  &__block {
+    @include global.flex(row, none, center);
+    background-color: #303030;
+    width: 550px;
+    height: 40px;
+    border-radius: 12px;
+    gap: 3px;
+    cursor: pointer;
+
+    &:hover .all__video__search__block__icon__block {
+      border-color: #646cff;
+    }
+
+    &__input {
+      height: 100%;
+      width: 90%;
+      border-radius: 12px 0px 0px 12px;
+      background-color: #303030;
+      border: none;
+      transition: 0.3s ease-in-out;
+      padding-left: 15px;
+      padding-right: 5px;
+      font-size: 15px;
+      cursor: pointer;
+
+      &:focus {
+        font-size: 16px;
+        outline: none;
+        cursor: default;
+      }
+    }
+
+    &__icon {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+
+      &__block {
+        @include global.flex(row, center, center);
+        width: 10%;
+        height: 100%;
+        background-color: #252525;
+        border: 2px solid #646cff3b;
+        border-radius: 0 12px 12px 0;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+      }
+    }
+  }
+}

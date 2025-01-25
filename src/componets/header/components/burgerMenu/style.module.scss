@@ -1,0 +1,88 @@
+@use "../../../../global.scss";
+
+.header__burger__menu {
+  top: 10px;
+  position: relative;
+  background: linear-gradient(#151515, #202020);
+  border-radius: 7px;
+  padding: 15px;
+  display: none;
+  width: 70%;
+  height: 200px;
+  transition: 0.4s ease-in-out;
+  animation: burger__visible 0.3s ease-in-out forwards;
+
+  &__shadow {
+    @include global.flex(row, center, none);
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    background-color: #1515159d;
+    animation: shadow__visible 0.3s ease-in-out forwards;
+  }
+
+  @include global.adaptiv(mobile) {
+    width: 100%;
+  }
+
+  @include global.adaptiv(table) {
+    @include global.flex(column, center, center);
+    gap: 30px;
+  }
+}
+
+.burger__close {
+  animation: burger__none 0.3s ease-in-out forwards;
+}
+
+.shadow__close {
+  animation: shadow__none 0.3s ease-in-out forwards;
+}
+
+@keyframes burger__visible {
+  0% {
+    top: -300px;
+  }
+
+  100% {
+    top: 10px;
+  }
+}
+
+@keyframes burger__none {
+  0% {
+    top: 10px;
+  }
+
+  100% {
+    top: -300px;
+  }
+}
+
+@keyframes shadow__visible {
+  0% {
+    display: flex;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shadow__none {
+  0% {
+    opacity: 1;
+    display: flex;
+  }
+
+  99% {
+    opacity: 0;
+  }
+
+  100% {
+    display: none;
+  }
+}

@@ -1,0 +1,293 @@
+@use "../../../../global.scss";
+
+.settings {
+  position: fixed;
+  background-color: #101010;
+  width: 200px;
+  top: 0;
+  height: 100%;
+  z-index: 3;
+  padding: 10px;
+  left: 0;
+  transition: 0.3s ease-in-out;
+
+  &__hide {
+    left: -200px;
+  }
+
+  &__close {
+    @include global.flex(row, center, center);
+    position: absolute;
+    top: 50%;
+    left: 210px;
+    background-color: #101010;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+
+    @include global.adaptiv(mobile) {
+      width: 30px;
+      height: 30px;
+    }
+
+    &__button {
+      width: 30px;
+      height: 30px;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+
+      @include global.adaptiv(mobile) {
+        width: 20px;
+        height: 20px;
+      }
+
+      &__reverse {
+        rotate: 180deg;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__disclaimer {
+    margin-top: 90px;
+    font-size: 13px;
+    color: #eee;
+    opacity: 0.4;
+  }
+
+  &__button {
+    @include global.flex(row, center, center);
+    border: 3px solid #646cff;
+    padding: 10px 25px 10px 25px;
+    border-radius: 7px;
+    transition: 0.3s ease-in-out;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+
+    @include global.adaptiv(table) {
+      padding: 5px 15px 5px 15px;
+    }
+
+    &:hover {
+      background-color: #646cff;
+      -webkit-box-shadow: 0px 0px 45px 25px rgba(100, 108, 255, 0.2);
+      -moz-box-shadow: 0px 0px 45px 25px rgba(100, 108, 255, 0.2);
+      box-shadow: 0px 0px 45px 25px rgba(100, 108, 255, 0.2);
+    }
+
+    &__text {
+      font-weight: 700;
+      cursor: pointer;
+
+      @include global.adaptiv(table) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  &:hover .settings__title__line {
+    opacity: 1;
+  }
+
+  &__sort {
+    &__block {
+      @include global.flex(column, center, center);
+      background-color: #141414;
+      margin-top: 30px;
+      gap: 10px;
+      padding: 5px;
+      border-radius: 7px;
+      cursor: pointer;
+
+      &:hover .settings__sort__line {
+        opacity: 1;
+      }
+    }
+
+    &__line {
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background-color: #646cff;
+      width: 60%;
+      opacity: 0.6;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    &__radio__button__container {
+      @include global.flex(column, space-between, none);
+      width: 90%;
+      cursor: pointer;
+    }
+
+    &__radio__button {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+
+      &__input {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      &__label {
+        display: inline-block;
+        padding-left: 30px;
+        margin-bottom: 10px;
+        position: relative;
+        font-size: 15px;
+        color: #f2f2f2;
+        font-weight: 600;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        &:hover {
+          .settings__sort__radio__button__custom {
+            transform: scale(1.2);
+            border-color: #4c8bf5;
+            box-shadow: 0 0 20px rgba(76, 139, 245, 0.5);
+          }
+        }
+      }
+
+      &__custom {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid #555;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      &__input:checked + &__label .settings__sort__radio__button__custom {
+        background-color: #4c8bf5;
+        border-color: transparent;
+        transform: scale(0.8);
+        box-shadow: 0 0 20px rgba(76, 139, 245, 0.5);
+        cursor: pointer;
+      }
+
+      &__input:checked + &__label {
+        color: #4c8bf5;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__label {
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  &__type {
+    &__line {
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background-color: #646cff;
+      width: 60%;
+      opacity: 0.6;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    &__title {
+      text-align: center;
+      cursor: pointer;
+    }
+
+    &__block {
+      @include global.flex(column, center, center);
+      background-color: #141414;
+      margin-top: 30px;
+      gap: 10px;
+      padding: 5px;
+      border-radius: 7px;
+      cursor: pointer;
+
+      &:hover .settings__type__line {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__title {
+    @include global.flex(column, center, center);
+    cursor: pointer;
+
+    &__line {
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background-color: #646cff;
+      width: 80%;
+      opacity: 0.6;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+    }
+  }
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  width: 90%;
+  justify-content: space-around;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background: #606062;
+  border-radius: 7px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+}
+
+.container input:checked ~ .checkmark {
+  background-image: linear-gradient(#255cd2, #1d52c1);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 0.45em;
+  top: 0.2em;
+  width: 0.24em;
+  height: 0.6em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}

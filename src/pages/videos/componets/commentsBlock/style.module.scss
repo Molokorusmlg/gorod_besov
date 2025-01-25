@@ -1,0 +1,66 @@
+@use "../../../../global.scss";
+
+.comments {
+  @include global.flex(column, none, none);
+  gap: 10px;
+  margin-top: 20px;
+
+  &__write {
+    width: 30%;
+    background-color: #111;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid #111;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      border-color: #646cff;
+    }
+
+    @include global.adaptiv(small-pc) {
+      width: 100%;
+    }
+
+    &__form {
+      @include global.flex(column, center, center);
+      gap: 15px;
+
+      &__textarea {
+        border-radius: 12px;
+        padding: 10px;
+        height: 200px;
+        width: 50%;
+        resize: none;
+        border: 2px solid #202020;
+        transition: 0.3s ease-in-out;
+        outline: none;
+        font-weight: 800;
+
+        &:focus {
+          border-color: #646cff;
+        }
+
+        &:hover {
+          border-color: #646cff;
+        }
+      }
+
+      &__input {
+        border-radius: 12px;
+        padding: 10px;
+        border: 2px solid #202020;
+        transition: 0.3s ease-in-out;
+        outline: none;
+        font-weight: 800;
+
+        &:focus {
+          border-color: #646cff;
+        }
+
+        &:hover {
+          border-color: #646cff;
+        }
+      }
+    }
+  }
+}

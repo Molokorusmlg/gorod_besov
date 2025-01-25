@@ -1,0 +1,41 @@
+@mixin flex($flex-d, $just-c, $align-i) {
+  display: flex;
+  flex-direction: $flex-d; //row / column
+  justify-content: $just-c; //space-between
+  align-items: $align-i; //center
+}
+
+$mobile_screen: 467px;
+$big_mobile_screen: 630px;
+$table_screen: 936px;
+$desctop-small_screen: 1080px;
+$desctop-medium_screen: 1480px;
+$desctop-large_screen: 1860px;
+
+@mixin adaptiv($media) {
+  @if ($media == mobile) {
+    @media (max-width: $mobile_screen) {
+      @content;
+    }
+  } @else if ($media == big_mobile) {
+    @media (max-width: $big_mobile_screen) {
+      @content;
+    }
+  } @else if ($media == table) {
+    @media (max-width: $table_screen) {
+      @content;
+    }
+  } @else if ($media == small-pc) {
+    @media (max-width: $desctop-small_screen) {
+      @content;
+    }
+  } @else if ($media == medium-pc) {
+    @media (max-width: $desctop-medium_screen) {
+      @content;
+    }
+  } @else if ($media == large-pc) {
+    @media (max-width: $desctop-large_screen) {
+      @content;
+    }
+  }
+}

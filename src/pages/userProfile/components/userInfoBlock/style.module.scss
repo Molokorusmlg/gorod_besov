@@ -1,0 +1,130 @@
+@use "../../../../global.scss";
+
+.user__info {
+  @include global.flex(column, center, center);
+  width: 50%;
+  height: 70%;
+  min-width: 600px;
+  min-height: 650px;
+  background-color: #111;
+  border-radius: 7px;
+  transition: 0.3s ease-in-out;
+  border: 1px solid #111;
+
+  &:hover {
+    border: 1px solid #646cff;
+    -webkit-box-shadow: 0px 0px 60px 30px rgba(63, 37, 129, 0.16);
+    -moz-box-shadow: 0px 0px 60px 30px rgba(63, 37, 129, 0.16);
+    box-shadow: 0px 0px 60px 30px rgba(63, 37, 129, 0.16);
+  }
+
+  &:hover .user__info__title__line {
+    opacity: 1;
+  }
+
+  @include global.adaptiv(big_mobile) {
+    height: auto;
+    width: auto;
+    min-width: 1px;
+    padding: 10px;
+  }
+
+  &__button {
+    margin-top: 45px;
+
+    &__save {
+      height: 50px;
+      width: 280px;
+    }
+  }
+
+  &__main {
+    @include global.flex(column, center, center);
+    gap: 15px;
+    margin-top: 30px;
+
+    &__label {
+      @include global.flex(row, flex-start, center);
+      width: 100%;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    &__input {
+      padding: 5px 10px 5px 10px;
+      border: 1px solid #111;
+      border-radius: 7px;
+      background-color: #1f1f1f;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      outline: none;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid #646cff;
+      }
+    }
+  }
+
+  &__avatar {
+    @include global.flex(row, space-between, center);
+    width: 50%;
+    margin-top: 30px;
+
+    @include global.adaptiv(big_mobile) {
+      flex-direction: column;
+    }
+
+    &__input {
+      padding: 5px 10px 5px 10px;
+      border: 1px solid #111;
+      border-radius: 7px;
+      background-color: #1f1f1f;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 800;
+      outline: none;
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid #646cff;
+      }
+
+      &__block {
+        @include global.flex(column, center, center);
+        gap: 15px;
+      }
+    }
+
+    &__img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 3px solid #111;
+      -webkit-box-shadow: 0px 0px 60px 30px rgba(63, 37, 129, 0.36);
+      -moz-box-shadow: 0px 0px 60px 30px rgba(63, 37, 129, 0.36);
+      box-shadow: 0px 0px 60px 30px rgba(63, 37, 129, 0.36);
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        border-color: #646cff;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+
+    &__line {
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      background-color: #646cff;
+      opacity: 0.6;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}

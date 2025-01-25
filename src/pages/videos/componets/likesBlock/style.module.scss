@@ -1,0 +1,55 @@
+@use "../../../../global.scss";
+
+.info__likes {
+  @include global.flex(row, center, center);
+  width: 200px;
+  height: 35px;
+  background-color: #232323;
+  border-radius: 12px;
+  cursor: pointer;
+
+  @include global.adaptiv(mobile) {
+    width: 400px;
+  }
+
+  &__grade {
+    @include global.flex(row, none, center);
+    gap: 20px;
+    width: 70%;
+    height: 100%;
+    border-right: 2px solid #353535;
+    padding-left: 15px;
+    border-radius: 12px 0px 0px 12px;
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #303030;
+    }
+  }
+
+  &__img {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.info__dislike {
+  @include global.flex(row, center, center);
+  height: 100%;
+  width: 30%;
+  cursor: pointer;
+
+  border-radius: 0px 12px 12px 0px;
+  transition: 0.1s ease-in-out;
+
+  &:hover {
+    background-color: #303030;
+  }
+}
+
+.reverse {
+  rotate: 180deg;
+}

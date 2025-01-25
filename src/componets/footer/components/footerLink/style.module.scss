@@ -1,0 +1,46 @@
+@use "../../../../global.scss";
+
+.footer {
+  &__links {
+    @include global.flex(row, center, center);
+    gap: 10px;
+
+    &:hover .footer__links__text__line {
+      opacity: 1;
+    }
+
+    &__text {
+      font-size: 20px;
+      font-weight: 800;
+
+      &__paragraph {
+        cursor: pointer;
+      }
+
+      @include global.adaptiv(table) {
+        font-size: 15px;
+      }
+
+      &__line {
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #646cff;
+        opacity: 0.3;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+      }
+    }
+
+    &__img {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+
+      @include global.adaptiv(table) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

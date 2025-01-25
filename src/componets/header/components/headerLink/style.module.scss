@@ -1,0 +1,43 @@
+@use "../../../../global.scss";
+
+.main__header__nav {
+  &__link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+
+    @include global.adaptiv(table) {
+      font-size: 15px;
+    }
+
+    &__block {
+      @include global.flex(column, center, center);
+      position: relative;
+      z-index: 3;
+      cursor: pointer;
+
+      &:hover .main__header__nav__link__line {
+        opacity: 1;
+      }
+    }
+
+    &__line {
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background-color: #646cff;
+      opacity: 0;
+      transition: 0.3s ease-in-out;
+      position: relative;
+      z-index: 3;
+      cursor: pointer;
+    }
+  }
+}
+
+.link__selected {
+  opacity: 1;
+}

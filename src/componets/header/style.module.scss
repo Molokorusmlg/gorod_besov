@@ -1,0 +1,107 @@
+@use "../../global.scss";
+
+.main__header {
+  @include global.flex(row, space-between, center);
+  padding: 10px;
+  border-radius: 0px 0px 7px 7px;
+  position: fixed;
+  background-color: #2020209c;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+
+  &__title {
+    font-weight: 800;
+    background-image: linear-gradient(to right, #fff, #646cff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.4s ease-in-out;
+    padding: 10px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 25px;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+
+    @include global.adaptiv(table) {
+      font-size: 20px;
+    }
+  }
+
+  &__burger {
+    display: none;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    z-index: 3;
+
+    &:hover {
+      border: 1px solid #646cff;
+      border-radius: 10px;
+    }
+
+    @include global.adaptiv(table) {
+      @include global.flex(row, center, center);
+      height: 100%;
+    }
+
+    &__img {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      position: relative;
+      z-index: 3;
+    }
+  }
+
+  &__profile {
+    @include global.flex(row, space-between, center);
+    background-color: #313131;
+    padding: 10px;
+    border-radius: 7px;
+    gap: 25px;
+    border: 1px solid #313131;
+    transition: 0.4s ease-in-out;
+    text-decoration: none;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #646cff;
+    }
+
+    &__img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50px;
+      z-index: 3;
+      cursor: pointer;
+    }
+
+    &__user {
+      color: #fff;
+      font-size: 10px;
+      z-index: 3;
+      cursor: pointer;
+    }
+  }
+
+  &__nav {
+    @include global.flex(row, space-between, center);
+    position: relative;
+    gap: 55px;
+    z-index: 3;
+
+    @include global.adaptiv(table) {
+      display: none;
+    }
+  }
+}
+
+.main__header__static {
+  position: sticky;
+  background-color: #202020;
+  padding: 5px;
+  z-index: 3;
+}

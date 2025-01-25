@@ -1,0 +1,13 @@
+@use "../../../../global.scss";
+
+.video__list {
+  padding: 20px;
+  @include global.flex(row, center, none);
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.loader__container {
+  width: 100%;
+  height: 100px;
+}

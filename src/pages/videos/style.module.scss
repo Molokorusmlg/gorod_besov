@@ -1,0 +1,23 @@
+@use "../../global.scss";
+
+.video {
+  height: 100vh;
+  min-height: 700px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  background: linear-gradient(to top, #252525, #101010);
+
+  @include global.adaptiv(big_mobile) {
+    padding: 0;
+  }
+}
+
+@keyframes move {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: -158px;
+  }
+}

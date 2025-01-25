@@ -1,0 +1,8 @@
+@use "../../global.scss";
+
+.section {
+  &__info {
+    width: 100%;
+    background: linear-gradient(to left, #202020, #303030);
+  }
+}

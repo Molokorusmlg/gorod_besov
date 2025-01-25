@@ -1,0 +1,71 @@
+@use "../../../../global.scss";
+
+.video__info {
+  background-color: #121212;
+  width: 75%;
+  height: 170px;
+  border-radius: 12px;
+  margin-top: 5px;
+  padding: 10px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+
+  @include global.adaptiv(large-pc) {
+    width: 100%;
+  }
+
+  &__additional {
+    @include global.flex(row, none, center);
+    gap: 50px;
+
+    @include global.adaptiv(table) {
+      gap: 16px;
+    }
+  }
+
+  &__open {
+    height: auto;
+  }
+}
+
+.info__more__button {
+  @include global.flex(row, center, center);
+  position: absolute;
+  bottom: 5px;
+  z-index: 3;
+  width: 80px;
+  height: 50px;
+  background-color: #303030;
+  border-radius: 12px;
+
+  @include global.adaptiv(table) {
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+  }
+
+  &__block {
+    @include global.flex(row, center, center);
+    width: 100%;
+  }
+
+  &__img {
+    position: static;
+    z-index: 3;
+    rotate: -90deg;
+    width: 30px;
+    height: 30px;
+    transition: 0.2s ease-in-out;
+
+    @include global.adaptiv(mobile) {
+      width: 20px;
+      height: 20px;
+    }
+
+    &__reverse {
+      rotate: 90deg;
+    }
+  }
+}

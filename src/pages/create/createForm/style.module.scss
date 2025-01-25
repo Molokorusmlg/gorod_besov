@@ -1,0 +1,93 @@
+@use "../../../global.scss";
+
+.create__form {
+  @include global.flex(column, center, center);
+  gap: 15px;
+  width: 40%;
+  height: 85%;
+  background-color: #101010;
+  border-radius: 7px;
+  border: 1px solid #101010;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    border-color: #646cff;
+    -webkit-box-shadow: 0px 0px 60px 30px rgba(63, 37, 129, 0.16);
+    -moz-box-shadow: 0px 0px 60px 30px rgba(63, 37, 129, 0.16);
+    box-shadow: 0px 0px 60px 30px rgba(63, 37, 129, 0.16);
+  }
+
+  &:hover .create__form__title__line {
+    opacity: 1;
+  }
+
+  &__inputs {
+    @include global.flex(column, center, 0);
+    gap: 10px;
+    width: 50%;
+  }
+
+  &__button {
+    &__block {
+      @include global.flex(row, center, center);
+      gap: 30px;
+    }
+  }
+
+  &__textarea {
+    border-radius: 12px;
+    padding: 10px;
+    height: 200px;
+    resize: none;
+    border: 2px solid #202020;
+    transition: 0.3s ease-in-out;
+    outline: none;
+    font-weight: 800;
+
+    &:focus {
+      border-color: #646cff;
+    }
+
+    &:hover {
+      border-color: #646cff;
+    }
+  }
+
+  &__error {
+    font-weight: 700;
+  }
+
+  &__input {
+    border-radius: 12px;
+    padding: 10px;
+    border: 2px solid #202020;
+    transition: 0.3s ease-in-out;
+    outline: none;
+    font-weight: 800;
+
+    &:focus {
+      border-color: #646cff;
+    }
+
+    &:hover {
+      border-color: #646cff;
+    }
+
+    &__block {
+      @include global.flex(column, none, none);
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+
+    &__line {
+      width: 100%;
+      height: 3px;
+      border-radius: 2px;
+      background-color: #646cff;
+      opacity: 0.6;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}

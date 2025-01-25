@@ -1,0 +1,74 @@
+@use "../../../global.scss";
+
+.form {
+  width: 40%;
+  @include global.flex(column, center, 0);
+  gap: 20px;
+  background-color: #3a3a3a;
+  padding: 30px;
+  border-radius: 10px;
+  height: 450px;
+  border: 1px solid #3a3a3a;
+  transition: border-color 0.25s;
+
+  &:hover {
+    border-color: #646cff;
+  }
+
+  &__error {
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    transition: 0.4 ease-in-out;
+    display: flex;
+    align-self: flex-start;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    animation: error_visible 1.4s forwards;
+  }
+
+  &__inputs {
+    @include global.flex(column, center, 0);
+    gap: 10px;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  &__input {
+    border: none;
+    padding: 15px 25px;
+    border-radius: 7px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+
+    &:hover {
+      border-color: #646cff;
+    }
+    &:focus,
+    :focus-visible {
+      outline: 4px auto -webkit-focus-ring-color;
+    }
+  }
+
+  &__block__input {
+    @include global.flex(column, center, none);
+  }
+}
+
+@keyframes error_visible {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

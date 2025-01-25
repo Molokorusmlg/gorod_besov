@@ -1,0 +1,35 @@
+@use ".././../../../global.scss";
+
+.othervideos {
+  @include global.flex(column, none, none);
+  gap: 20px;
+  position: absolute;
+  right: 0px;
+  top: 80px;
+  overflow: auto;
+  height: 100vh;
+  border: 3px solid #131313;
+  transition: 0.3s ease-in-out;
+  border-radius: 7px;
+
+  &:hover {
+    border-color: #646cff42;
+  }
+
+  @include global.adaptiv(large-pc) {
+    position: relative;
+    right: none;
+    top: inherit;
+    border: none;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+}
+
+.othervideos {
+  scrollbar-width: none;
+}
+
+.othervideos::-webkit-scrollbar {
+  display: none;
+}
